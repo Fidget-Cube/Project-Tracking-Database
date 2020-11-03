@@ -1,6 +1,6 @@
 USE mvonblan_cs355fl20;
 
-INSERT INTO Customers
+INSERT INTO Customers (customerName, contactName, contactTitle, contactPhoneNum, salesperson, projectManager)
 VALUES
 	('Sprint Copy Center', 'any contact', 'purchasing', '707-823-3900', 'sls1', 'pm1'),
 	('Common Sense Business Solutions', 'some contact', 'manager', '707-528-2151', 'sls2', 'pm2'),
@@ -18,7 +18,7 @@ VALUES
 	('MISSION Engineering Inc', 'one contact', 'manager', '866-333-1828', 'sls2', 'pm2'),
 	('E.R. Sawyer Jewelers St Helena', 'helpful contact', 'facilities', '707-963-0239', 'sls3', 'pm3');
 
-INSERT INTO locations
+INSERT INTO Locations (customer, address1, address2, city, state, zip)
 VALUES
 	(1, '175 N Main Street', NULL, 'Sebastopol', 'CA', '95472'),
 	(2, '2208 Northpoint Parkway', NULL, 'Santa Rosa', 'CA', '95407'),
