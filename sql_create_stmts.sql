@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS Installations;
 DROP TABLE IF EXISTS Orders;
 
 CREATE TABLE Customers (
-	customerID int NOT NULL,
+	customerID int NOT NULL AUTO_INCREMENT,
 	customerName varchar(100) NOT NULL,
 	contactName varchar(100),
 	contactTitle varchar(100),
@@ -22,7 +22,7 @@ CREATE TABLE Customers (
 );
 
 CREATE TABLE Locations (
-	locationID int NOT NULL,
+	locationID int NOT NULL AUTO_INCREMENT,
 	customer int NOT NULL,
 	address1 varchar(100),
 	address2 varchar(100),
@@ -34,7 +34,7 @@ CREATE TABLE Locations (
 );
 
 CREATE TABLE Projects (
-	projectID int NOT NULL,
+	projectID int NOT NULL AUTO_INCREMENT,
 	projectName varchar(100),
 	customer int NOT NULL,
 	location int NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE Projects (
 );
 
 CREATE TABLE Installations (
-	installationID int NOT NULL,
+	installationID int NOT NULL AUTO_INCREMENT,
 	project int NOT NULL,
 	installationLead varchar(100),
 	installationDate DATE, 
@@ -59,7 +59,7 @@ CREATE TABLE Installations (
 );
 
 CREATE TABLE Orders (
-	orderID int NOT NULL,
+	orderID int NOT NULL AUTO_INCREMENT,
 	project int NOT NULL,
 	vendor varchar(20),
 	contractNumber varchar(20),
