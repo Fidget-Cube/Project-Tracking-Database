@@ -1,21 +1,9 @@
-const mysql = require('mysql');
 const express = require('express');
-const fs = require('fs');
 const url = require('url');
+const control = require('./control.js');
 
 const app = express();
 const port = 8080;
-
-const con = mysql.createConnection({
-	host: "localhost",
-	user: "mvonblan_cs355fl20",
-	password: "vo7615745"
-});
-
-con.connect(function(err) {
-	if (err) throw err;
-	console.log("Connected!");
-});
 
 app.get('/', (req, res) => {
 	res.redirect('/home.html');
@@ -25,7 +13,11 @@ app.get('/view.html', (req, res) => {
 	const q = url.parse(req.url, true).query;
 	const txt = q.fname;
 	if (txt) {
-		res.send(txt);
+		(async () => {
+			result = await control.database.showProject(txt);
+			console.log(result);
+			res.send(result);
+		})();
 	} else {
 		res.sendFile('/home/student/vonblanken/Project-Tracking-Database/public/view.html');
 	}
