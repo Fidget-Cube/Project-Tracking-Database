@@ -1,9 +1,11 @@
+USE mvonblan_cs355fl20;
+
 INSERT INTO Customers
 VALUES
-	(Sprint Copy Center, any contact, purchasing, 707-823-3900, sls1, pm1),
-	(Common Sense Business Solutions, some contact, manager, 707-528-2151, sls2, pm2),
-	(Sonoma Design Apparel & Promotions, another contact, facilities, 707-578-4739, sls3, pm3),
-	(Applied Signs, good contact, purchasing, 707-202-4569, sls3, pm3),
+	('Sprint Copy Center', 'any contact', 'purchasing', '707-823-3900', 'sls1', 'pm1'),
+	('Common Sense Business Solutions', 'some contact', 'manager', '707-528-2151', 'sls2', 'pm2'),
+	('Sonoma Design Apparel & Promotions', 'another contact', 'facilities', '707-578-4739', 'sls3', 'pm3'),
+	('Applied Signs', good contact, purchasing, 707-202-4569, sls3, pm3),
 	(ChromaGraphics, fav contact, manager, 707-528-2644, sls2, pm2),
 	(Clone Digital Print & Copy, one contact, facilities, 707-527-6565, sls1, pm1),
 	(E.R. Sawyer Jewelers, helpful contact, purchasing, 707-963-0239, sls2, pm2),

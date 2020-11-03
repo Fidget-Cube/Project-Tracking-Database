@@ -3,11 +3,11 @@ CREATE DATABASE projectTracker;
 Cannot create new databases in blue :(*/
 USE mvonblan_cs355fl20;
 
-DROP TABLE IF EXISTS Customers;
-DROP TABLE IF EXISTS Locations;
-DROP TABLE IF EXISTS Projects;
 DROP TABLE IF EXISTS Installations;
 DROP TABLE IF EXISTS Orders;
+DROP TABLE IF EXISTS Projects;
+DROP TABLE IF EXISTS Locations;
+DROP TABLE IF EXISTS Customers;
 
 CREATE TABLE Customers (
 	customerID int NOT NULL AUTO_INCREMENT,
