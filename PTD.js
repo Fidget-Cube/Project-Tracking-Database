@@ -11,10 +11,17 @@ app.get('/', (req, res) => {
 
 app.get('/view.html', (req, res) => {
 	const q = url.parse(req.url, true).query;
-	const txt = q.fname;
-	if (txt) {
+	const customer = q.customer;
+	const project = q.project;
+	if (project) {
 		(async () => {
-			result = await control.database.showProject(txt);
+			result = await control.database.showProject(project);
+			console.log(result);
+			res.send(result);
+		})();
+	} else if (customer){
+		(async () => {
+			result = await control.database.showCustomer(customer);
 			console.log(result);
 			res.send(result);
 		})();
