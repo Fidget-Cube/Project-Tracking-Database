@@ -1,0 +1,23 @@
+{
+  "name": "project-tracking-database",
+  "version": "1.0.0",
+  "description": "CS 370",
+  "main": "PTD.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/APstarwars/Project-Tracking-Database.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/APstarwars/Project-Tracking-Database/issues"
+  },
+  "homepage": "https://github.com/APstarwars/Project-Tracking-Database#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}
