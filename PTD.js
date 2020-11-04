@@ -14,17 +14,13 @@ app.get('/view.html', (req, res) => {
 	const customer = q.customer;
 	const project = q.project;
 	if (project) {
-		(async () => {
-			result = await control.database.showProject(project);
-			console.log(result);
-			res.send(result);
-		})();
+		control.database.showProject(project)
+			.then(data => {console.log(data); res.send(data);})
+			.catch(err => {console.log(err); res.send(err);});
 	} else if (customer){
-		(async () => {
-			result = await control.database.showCustomer(customer);
-			console.log(result);
-			res.send(result);
-		})();
+		control.database.showCustomer(customer)
+			.then(data => {console.log(data); res.send(data);})
+			.catch(err => {console.log(err); res.send(err);});
 	} else {
 		res.sendFile('/home/student/vonblanken/Project-Tracking-Database/public/view.html');
 	}
