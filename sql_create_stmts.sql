@@ -38,7 +38,7 @@ CREATE TABLE Projects (
 	projectName varchar(100),
 	customer int NOT NULL,
 	location int NOT NULL,
-	status varchar(10),
+	status varchar(20),
 	orderManager varchar(100),
 	projectDesigner varchar(100),
 	targetInstallDate DATE,
