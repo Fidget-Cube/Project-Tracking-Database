@@ -1,16 +1,16 @@
-// This is the database interface for the table "Projects" //
-// Controls querying, insertion, editing and deletion      //
+// This is the database interface for the table "Orders"  //
+// Controls querying, insertion, editing and deletion     //
 const dbConnection = require('../database/connection');
 
-class ProjectController {
+class OrderController {
     constructor() {
-        console.log('Project Controller Initialized');
+        console.log('Order Controller Initialized');
     }
 
     // Querying
-    getProjectByID(pID) {
+    getOrderByProject(pID) {
         return new Promise((resolve, reject) => {
-            const query = 'SELECT * FROM Projects WHERE projectID=?';
+            const query = 'SELECT * FROM Orders WHERE project=?';
             dbConnection.query({ sql: query, values: [pID] }, function(err, result) {
                 if (err) reject(err);
                 resolve(result);
@@ -20,14 +20,14 @@ class ProjectController {
                 console.log(data);
                 return data;
             } else {
-                console.log("Project Not Found");
+                console.log("Order Not Found");
                 return false;
             }
         }).catch(err => {
             console.log(err);
             return false;
-        });
+        })
     }
 }
 
-module.exports = ProjectController;
+module.exports = OrderController;

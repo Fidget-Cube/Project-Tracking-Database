@@ -1,5 +1,5 @@
-// This is the database interface for the table "Project" //
-// Controls querying, insertion, editing and deletion     //
+// This is the database interface for the table "Customers" //
+// Controls querying, insertion, editing and deletion       //
 const dbConnection = require('../database/connection');
 
 class CustomerController {

@@ -1,17 +1,17 @@
-// This is the database interface for the table "Projects" //
-// Controls querying, insertion, editing and deletion      //
+// This is the database interface for the table "Locations" //
+// Controls querying, insertion, editing and deletion       //
 const dbConnection = require('../database/connection');
 
-class ProjectController {
+class LocationController {
     constructor() {
-        console.log('Project Controller Initialized');
+        console.log('Location Controller Initialized');
     }
 
     // Querying
-    getProjectByID(pID) {
+    getLocationByCustomer(cID) {
         return new Promise((resolve, reject) => {
-            const query = 'SELECT * FROM Projects WHERE projectID=?';
-            dbConnection.query({ sql: query, values: [pID] }, function(err, result) {
+            const query = 'SELECT * FROM Locations WHERE customer=?';
+            dbConnection.query({ sql: query, values: [cID] }, function(err, result) {
                 if (err) reject(err);
                 resolve(result);
             });
@@ -20,14 +20,14 @@ class ProjectController {
                 console.log(data);
                 return data;
             } else {
-                console.log("Project Not Found");
+                console.log("Location Not Found");
                 return false;
             }
         }).catch(err => {
             console.log(err);
             return false;
-        });
+        })
     }
 }
 
-module.exports = ProjectController;
+module.exports = LocationController;
