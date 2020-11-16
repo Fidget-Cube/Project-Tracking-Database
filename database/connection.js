@@ -1,3 +1,4 @@
+// This is the Database connection program //
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({

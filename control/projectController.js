@@ -1,3 +1,5 @@
+// This is the database interface for the table "Project" //
+// Controls querying, insertion, editing and deletion     //
 const dbConnection = require('../database/connection');
 
 class ProjectController {
@@ -5,6 +7,7 @@ class ProjectController {
         console.log('Project Controller Initialized');
     }
 
+    // Querying
     getProjectByID(pID) {
         return new Promise((resolve, reject) => {
             const query = 'SELECT * FROM Projects WHERE projectID=?';

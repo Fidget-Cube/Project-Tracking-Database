@@ -1,3 +1,5 @@
+// This is the database interface for the table "Project" //
+// Controls querying, insertion, editing and deletion     //
 const dbConnection = require('../database/connection');
 
 class CustomerController {
@@ -5,10 +7,11 @@ class CustomerController {
         console.log('Customer Controller Initialized');
     }
 
-    getCustomerByID(cID) {
+    // Querying
+    getCustomerByName(cName) {
         return new Promise((resolve, reject) => {
             const query = 'SELECT * FROM Customers WHERE customerName=?';
-            dbConnection.query({ sql: query, values: [cID] }, function(err, result) {
+            dbConnection.query({ sql: query, values: [cName] }, function(err, result) {
                 if (err) reject(err);
                 resolve(result);
             });
