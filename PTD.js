@@ -1,7 +1,7 @@
 const express = require('express');
 const url = require('url');
-const customerController = require('./control/customerController');
-const projectController = require('./control/projectController');
+const customerController = new (require('./control/customerController.js'))();
+const projectController = new (require('./control/projectController.js'))();
 
 const app = express();
 const port = 8080;
