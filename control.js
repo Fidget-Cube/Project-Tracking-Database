@@ -15,7 +15,8 @@ con.connect(function(err) {
 exports.database = {
 	showCustomer : function (cID) {
 		return new Promise((resolve, reject) => {
-			con.query(`SELECT * FROM Customers WHERE customerName="${cID}"`, function (err, result) {
+			const query = `SELECT * FROM Customers WHERE customerName="?"`;
+			con.query({sql: query, values: [cID]}, function (err, result) {
 				if (err) {return reject(err);};
 				if (result.length > 0) {
 					return resolve(result);
@@ -27,7 +28,8 @@ exports.database = {
 	},
 	showProject : function (pID) {
 		return new Promise((resolve, reject) => {
-			con.query(`SELECT * FROM Projects WHERE projectID=${pID}`, function (err, result) {
+			const query = `SELECT * FROM Projects WHERE projectID=?`;
+			con.query({sql: query, values: [pID]}, function (err, result) {
 				if (err) {return reject(err);};
 				if (result.length > 0) {
 					return resolve(result);
