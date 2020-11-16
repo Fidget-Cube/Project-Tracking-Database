@@ -35,6 +35,8 @@ app.get('/view.html', async function(req, res) {
         if (customer) {
             let location = await locationController.getLocationByCustomer(customer[0].customerID);
             if (location) customer = customer.concat(location);
+            let project = await projectController.getProjectByCustomer(customer[0].customerID);
+            if (project) customer = customer.concat(project);
             res.send(customer);
         } else {
             res.send("Error fetching data, check your input.");
