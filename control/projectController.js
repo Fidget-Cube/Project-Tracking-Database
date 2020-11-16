@@ -17,12 +17,15 @@ class ProjectController {
             });
         }).then(data => {
             if (data.length > 0) {
+                console.log(data);
                 return data;
             } else {
-                return "Project Not Found";
+                console.log("Project Not Found");
+                return false;
             }
         }).catch(err => {
-            return err;
+            console.log(err);
+            return false;
         });
     }
 }

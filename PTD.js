@@ -17,13 +17,19 @@ app.get('/', (req, res) => {
 app.get('/view.html', async function(req, res) {
     const q = url.parse(req.url, true).query;
     if (q.project) {
-        let result = await projectController.getProjectByID(q.project);
-        console.log(result);
-        res.send(result);
+        let project = await projectController.getProjectByID(q.project);
+        if (project) {
+            res.send(project);
+        } else {
+            res.send("Error fetching data, check your input.");
+        }
     } else if (q.customer) {
-        let result = await customerController.getCustomerByName(q.customer);
-        console.log(result);
-        res.send(result);
+        let customer = await customerController.getCustomerByName(q.customer);
+        if (customer) {
+            res.send(customer);
+        } else {
+            res.send("Error fetching data, check your input.");
+        }
     } else {
         res.sendFile('/home/student/vonblanken/Project-Tracking-Database/public/view.html');
     }

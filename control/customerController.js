@@ -17,12 +17,15 @@ class CustomerController {
             });
         }).then(data => {
             if (data.length > 0) {
+                console.log(data);
                 return data;
             } else {
-                return "Customer Not Found";
+                console.log("Customer Not Found");
+                return false;
             }
         }).catch(err => {
-            return err;
+            console.log(err);
+            return false;
         })
     }
 }
