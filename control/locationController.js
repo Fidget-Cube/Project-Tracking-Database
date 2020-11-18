@@ -7,7 +7,7 @@ class LocationController {
         console.log('Location Controller Initialized');
     }
 
-    // Querying
+    // Obtaining Location Data
     getLocationByCustomer(cID) {
         return new Promise((resolve, reject) => {
             const query = 'SELECT * FROM Locations WHERE customer=?';
@@ -27,6 +27,21 @@ class LocationController {
             console.log(err);
             return false;
         })
+    }
+
+    // Creating New Location Data
+    addLocation(location) {
+
+    }
+
+    // Modifying Location Data
+    setLocation(location) {
+
+    }
+
+    // Deleting Location Data
+    deleteLocationByCustomer(cID) {
+        
     }
 }
 

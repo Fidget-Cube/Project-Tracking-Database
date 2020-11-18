@@ -7,7 +7,7 @@ class OrderController {
         console.log('Order Controller Initialized');
     }
 
-    // Querying
+    // Obtaining Order Data
     getOrderByProject(pID) {
         return new Promise((resolve, reject) => {
             const query = 'SELECT * FROM Orders WHERE project=?';
@@ -27,6 +27,21 @@ class OrderController {
             console.log(err);
             return false;
         })
+    }
+
+    // Creating New Order Data
+    addOrder(order) {
+
+    }
+
+    // Modifying Order Data
+    setOrder(order) {
+
+    }
+
+    // Deleting Order Data
+    deleteOrderByProject(pID) {
+        
     }
 }
 

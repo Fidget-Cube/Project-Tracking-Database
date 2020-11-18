@@ -7,7 +7,7 @@ class ProjectController {
         console.log('Project Controller Initialized');
     }
 
-    // Querying
+    // Obtaining Project Data
     getProjectByID(pID) {
         return new Promise((resolve, reject) => {
             const query = 'SELECT * FROM Projects WHERE projectID=?';
@@ -48,6 +48,21 @@ class ProjectController {
             console.log(err);
             return false;
         });
+    }
+
+    // Creating New Project Data
+    addProject(project) {
+
+    }
+
+    // Modifying Project Data
+    setProject(project) {
+
+    }
+
+    // Deleting Project Data
+    deleteProjectByID(pID) {
+        
     }
 }
 

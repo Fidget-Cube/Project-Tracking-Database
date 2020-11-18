@@ -7,7 +7,7 @@ class CustomerController {
         console.log('Customer Controller Initialized');
     }
 
-    // Querying
+    // Obtaining Customer Data
     getCustomerByName(cName) {
         return new Promise((resolve, reject) => {
             const query = 'SELECT * FROM Customers WHERE customerName=?';
@@ -27,6 +27,21 @@ class CustomerController {
             console.log(err);
             return false;
         })
+    }
+
+    // Creating New Customer Data
+    addCustomer(customer) {
+
+    }
+
+    // Modifying Customer Data
+    setCustomer(customer) {
+
+    }
+
+    // Deleting Customer Data
+    deleteCustomerByID(cID) {
+        
     }
 }
 

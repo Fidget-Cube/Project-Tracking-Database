@@ -7,7 +7,7 @@ class InstallationController {
         console.log('Installation Controller Initialized');
     }
 
-    // Querying
+    // Obtaining Installation Data
     getInstallationByProject(pID) {
         return new Promise((resolve, reject) => {
             const query = 'SELECT * FROM Installations WHERE project=?';
@@ -27,6 +27,21 @@ class InstallationController {
             console.log(err);
             return false;
         })
+    }
+
+    // Creating New Installation Data
+    addInstallation(install) {
+
+    }
+
+    // Modifying Installation Data
+    setInstallation(install) {
+
+    }
+
+    // Deleting Installation Data
+    deleteInstallationByProject(pID) {
+        
     }
 }
 
