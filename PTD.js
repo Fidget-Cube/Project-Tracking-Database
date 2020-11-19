@@ -1,7 +1,6 @@
 // This is the routing program for the Project Tracking Database //
 // It controls web user requests and responses using Express.js  //
 const express = require('express');
-const url = require('url');
 const customerController = new(require('./control/customerController.js'))();
 const locationController = new(require('./control/locationController.js'))();
 const projectController = new(require('./control/projectController.js'))();
@@ -10,6 +9,8 @@ const orderController = new(require('./control/orderController.js'))();
 
 const app = express();
 const port = 8080;
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
 
 // Redirects to the homepage
 app.get('/', (req, res) => {
@@ -17,10 +18,9 @@ app.get('/', (req, res) => {
 });
 
 // Controls requests to view data in the database
-app.get('/view.html', async function(req, res) {
-    const q = url.parse(req.url, true).query;
-    if (q.project) {
-        let project = await projectController.getProjectByID(q.project);
+app.post('/view.html', async function(req, res) {
+    if (req.body.project_id) {
+        let project = await projectController.getProjectByID(req.body.project_id);
         if (project) {
             let installation = await installationController.getInstallationByProject(project[0].projectID);
             if (installation) project = project.concat(installation);
@@ -30,8 +30,8 @@ app.get('/view.html', async function(req, res) {
         } else {
             res.send("Error fetching data, check your input.");
         }
-    } else if (q.customer) {
-        let customer = await customerController.getCustomerByName(q.customer);
+    } else if (req.body.customer) {
+        let customer = await customerController.getCustomerByName(req.body.customer);
         if (customer) {
             let location = await locationController.getLocationByCustomer(customer[0].customerID);
             if (location) customer = customer.concat(location);
@@ -42,14 +42,18 @@ app.get('/view.html', async function(req, res) {
             res.send("Error fetching data, check your input.");
         }
     } else {
-        res.sendFile('/home/student/vonblanken/Project-Tracking-Database/public/view.html');
+        res.redirect('/view.html');
     }
 });
 
 // Controls requests to add data to the database
-app.get('/create.html', async function(req, res) {
-    const q = url.parse(req.url, true).query;
-    //let test = await projectController.addProject(q);
+app.post('/create.html', async function(req, res) {
+    if (req.body) {
+        //let pID = await projectController.addProject(q);
+        res.send("Hawdy Pardner");
+    } else {
+        res.redirect('/create.html');
+    }
 });
 
 app.use(express.static('public'));

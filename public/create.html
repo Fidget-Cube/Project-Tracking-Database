@@ -66,14 +66,14 @@
 <br>
 <p>Please fill out all fields, and then click the Submit button.</p>
 
-<form action="action_page.php" method="post">
+<form method="post">
   <label>Project Information:</label><br><br>
   <label for="projectName">Project Name:</label>
   <input type="text" id="projectName" name="projectName"><br><br>
   <label for="location">Location ID:</label>
-  <input type="text" id="location" name="location" pattern="[0-9]{10}" required><br><br>
+  <input type="text" id="location" name="location" pattern="[0-9]+" required><br><br>
   <label for="customer">Customer ID:</label>
-  <input type="text" id="customer" name="customer" pattern="[0-9]{10}" required><br><br>
+  <input type="text" id="customer" name="customer" pattern="[0-9]+" required><br><br>
   <label for="projectStatus">Project Status:</label>
   <input type="text" id="projectStatus" name="projectStatus" ><br><br>
   <label for="orderManager">Order Manager:</label>
