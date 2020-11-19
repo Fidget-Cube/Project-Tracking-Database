@@ -66,23 +66,25 @@
 <br>
 <p>Please fill out all fields, and then click the Submit button.</p>
 
-<form>
-  <label for="fname">Project Name:</label>
-  <input type="text" id="pname" name="pname"><br><br><br>
+<form action="action_page.php" method="post">
+  <label>Project Information:</label><br><br>
+  <label for="projectName">Project Name:</label>
+  <input type="text" id="projectName" name="projectName"><br><br>
+  <label for="location">Location ID:</label>
+  <input type="text" id="location" name="location" pattern="[0-9]{10}" required><br><br>
+  <label for="customer">Customer ID:</label>
+  <input type="text" id="customer" name="customer" pattern="[0-9]{10}" required><br><br>
+  <label for="projectStatus">Project Status:</label>
+  <input type="text" id="projectStatus" name="projectStatus" ><br><br>
+  <label for="orderManager">Order Manager:</label>
+  <input type="text" id="orderManager" name="orderManager" ><br><br>
+  <label for="projectDesigner">Project Designer:</label>
+  <input type="text" id="projectDesigner" name="projectDesigner" ><br><br>
+  <label for="targetInstallDate">Target Install Date:</label>
+  <input type="date" id="targetInstallDate" name="targetInstallDate" required><br><br>
+  <label for="orderInstructions">Order Instructions:</label>
+  <input type="text" id="orderInstructions" name="orderInstructions"><br><br>
   
-  <label>Contact Information:</label><br><br>
-  <label for="fname">First Name:</label>
-  <input type="text" id="fname" name="fname"><br><br>
-  <label for="lname">Last Name:</label>
-  <input type="text" id="lname" name="lname"><br><br>
-  <label for="fname">Email:</label>
-  <input type="text" id="email" name="email"><br><br>
-  <label for="fname">Phone Number:</label>
-  <input type="text" id="pname" name="pname"><br><br><br>
-  
-  <label for="fname">Payment Information:</label><br><br>
-  <label for="fname">Billing Address:</label>
-  <input type="text" id="pname" name="pname"><br><br>
   <input type="submit" value="Create Project">
 </form>
 
