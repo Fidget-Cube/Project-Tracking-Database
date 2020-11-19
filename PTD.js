@@ -49,8 +49,13 @@ app.post('/view.html', async function(req, res) {
 // Controls requests to add data to the database
 app.post('/create.html', async function(req, res) {
     if (req.body) {
-        //let pID = await projectController.addProject(q);
-        res.send("Hawdy Pardner");
+        let pID = await projectController.addProject(req.body);
+        if (pID) {
+            let project = await projectController.getProjectByID(pID);
+            res.send(project);
+        } else {
+            res.send("Error, Project Creation Failed");
+        }
     } else {
         res.redirect('/create.html');
     }

@@ -52,7 +52,22 @@ class ProjectController {
 
     // Creating New Project Data
     addProject(project) {
-
+        return new Promise((resolve, reject) => {
+            const query = 'INSERT INTO Projects (projectName, customer, location, status, orderManager, projectDesigner, targetInstallDate, orderingInstructions) VALUES (?, ?, ?, ?, ?, ?, ?, ?);';
+            dbConnection.query({
+                sql: query,
+                values: [project.projectName, project.location, project.customer, project.projectStatus, project.orderManager, project.projectDesigner, project.targetInstallDate, project.orderInstructions]
+            }, function(err, result) {
+                if (err) reject(err);
+                resolve(result);
+            });
+        }).then(data => {
+            console.log(data);
+            return data.insertId;
+        }).catch(err => {
+            console.log(err);
+            return false;
+        })
     }
 
     // Modifying Project Data
