@@ -46,6 +46,12 @@ app.get('/view.html', async function(req, res) {
     }
 });
 
+// Controls requests to add data to the database
+app.get('/create.html', async function(req, res) {
+    const q = url.parse(req.url, true).query;
+    //let test = await projectController.addProject(q);
+});
+
 app.use(express.static('public'));
 
 app.listen(port, () => { console.log(`Listening on http://blue.cs.sonoma.edu:${port}/`) });
