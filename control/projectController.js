@@ -56,7 +56,7 @@ class ProjectController {
             const query = 'INSERT INTO Projects (projectName, customer, location, status, orderManager, projectDesigner, targetInstallDate, orderingInstructions) VALUES (?, ?, ?, ?, ?, ?, ?, ?);';
             dbConnection.query({
                 sql: query,
-                values: [project.projectName, project.location, project.customer, project.projectStatus, project.orderManager, project.projectDesigner, project.targetInstallDate, project.orderInstructions]
+                values: [project.projectName, project.customer, project.location, project.status, project.orderManager, project.projectDesigner, project.targetInstallDate, project.orderingInstructions]
             }, function(err, result) {
                 if (err) reject(err);
                 resolve(result);

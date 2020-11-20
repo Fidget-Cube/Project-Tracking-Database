@@ -50,7 +50,7 @@ app.post('/create.html', async function(req, res) {
         let pID = await projectController.addProject(req.body);
         if (pID) {
             let project = await projectController.getProjectByID(pID);
-            res.send(project);
+            res.send(JSON.stringify(project));
         } else {
             res.send('{"error":"Error, Project Creation Failed"}');
         }
