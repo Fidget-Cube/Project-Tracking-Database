@@ -41,8 +41,6 @@ app.post('/view.html', async function(req, res) {
         } else {
             res.send('{"error":"Error fetching data, check your input."}');
         }
-    } else {
-        res.redirect('/view.html');
     }
 });
 
@@ -56,8 +54,6 @@ app.post('/create.html', async function(req, res) {
         } else {
             res.send('{"error":"Error, Project Creation Failed"}');
         }
-    } else {
-        res.redirect('/create.html');
     }
 });
 

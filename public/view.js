@@ -1,5 +1,8 @@
 function viewProject() {
-    callDoc("/view.html", "project_id=1")
+    const request = JSON.stringify({
+        project_id: document.getElementById("project_id").value
+    });
+    callDoc("/view.html", request)
     .then(xhttp => {
         let response = JSON.parse(xhttp.responseText);
         if (response.error) {
@@ -11,8 +14,11 @@ function viewProject() {
     .catch(xhttp => {document.getElementById("data").innerHTML = "Failed to Connect. Error Code: " + xhttp.status + ": " + xhttp.statusText});
 }
 
-function getCustomer() {
-    callDoc("/view.html", "customer=1")
+function viewCustomer() {
+    const request = JSON.stringify({
+        customer: document.getElementById("customer").value
+    });
+    callDoc("/view.html", request)
     .then(xhttp => {
         let response = JSON.parse(xhttp.responseText);
         if (response.error) {
@@ -37,7 +43,7 @@ function callDoc(url, req) {
             }
         };
         xhttp.open("POST", url, true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.setRequestHeader("Content-type", "application/json");
         xhttp.send(req);
     });
 }
