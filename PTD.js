@@ -26,9 +26,9 @@ app.post('/view.html', async function(req, res) {
             if (installation) project = project.concat(installation);
             let order = await orderController.getOrderByProject(project[0].projectID);
             if (order) project = project.concat(order);
-            res.send(project);
+            res.send(JSON.stringify(project));
         } else {
-            res.send("Error fetching data, check your input.");
+            res.send('{"error":"Error fetching data, check your input."}');
         }
     } else if (req.body.customer) {
         let customer = await customerController.getCustomerByName(req.body.customer);
@@ -37,9 +37,9 @@ app.post('/view.html', async function(req, res) {
             if (location) customer = customer.concat(location);
             let project = await projectController.getProjectByCustomer(customer[0].customerID);
             if (project) customer = customer.concat(project);
-            res.send(customer);
+            res.send(JSON.stringify(customer));
         } else {
-            res.send("Error fetching data, check your input.");
+            res.send('{"error":"Error fetching data, check your input."}');
         }
     } else {
         res.redirect('/view.html');
@@ -54,7 +54,7 @@ app.post('/create.html', async function(req, res) {
             let project = await projectController.getProjectByID(pID);
             res.send(project);
         } else {
-            res.send("Error, Project Creation Failed");
+            res.send('{"error":"Error, Project Creation Failed"}');
         }
     } else {
         res.redirect('/create.html');
