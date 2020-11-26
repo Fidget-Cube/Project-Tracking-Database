@@ -38,28 +38,28 @@ VALUES
 	
 INSERT INTO Projects (projectName, customer, location, status, orderManager, projectDesigner, targetInstallDate, orderingInstructions)
 VALUES
-	('project1', 1, 1, 'in progress', 'om1', 'pm1', '2020-10-20', 'asap'),
-    	('project2', 2, 2, 'completed', 'om2', 'pm2', '2020-11-20', 'asap!'),
-    	('project3', 3, 3, 'in progress', 'om3', 'pm3', '2020-12-15', 'write in "green" for color selection before faxing order in'),
-    	('project4', 4, 4, 'in progress', 'om3', 'pm3', '2020-12-20', 'asap'),
-    	('project5', 5, 5, 'completed', 'om1', 'pm1', '2020-01-17', 'write in "gray" for color selection'),
-    	('project6', 6, 6, 'completed', 'om2', 'pm2', '2021-01-30', 'asap!'),
-    	('project7', 7, 7, 'in progress', 'om2', 'pm2', '2021-02-04', 'asap!'),
-    	('project8', 8, 8, 'completed', 'om3', 'pm3', '2021-02-12', 'write in "blue" for color selection'),
-    	('project9', 9, 9, 'completed', 'om1', 'pm1', '2021-02-23', 'write in "orange" for color selection before faxing order in'),
-    	('project10', 10, 10, 'in progress', 'om1', 'pm1', '2021-03-07', 'write in "black" for color selection'),
-    	('project11', 11, 11, 'in progress', 'om2', 'pm2', '2021-03-21', 'no rush'),
-    	('project12', 12, 12, 'completed', 'om3', 'pm3', '2021-05-01', 'write in "white for color selection'),
-    	('project13', 13, 13, 'in progress', 'om3', 'pm1', '2021-06-14', 'no rush'),
-    	('project14', 14, 14, 'completed', 'om1', 'pm2', '2021-07-25', 'write in "green" for color selection before faxing order in'),
-    	('project15', 15, 15, 'completed', 'om2', 'pm3', '2021-07-31', 'asap!');
+	('waiting room chairs', 1, 1, 'in progress', 'om1', 'pm1', '2020-10-20', 'request to ship with previous order'),
+    	('desks', 2, 2, 'completed', 'om2', 'pm2', '2020-11-20', 'brushed steel finish for bases'),
+    	('keyboard trays', 3, 3, 'in progress', 'om3', 'pm3', '2020-12-15', 'spiff to sales'),
+    	('mail slot organizer', 4, 4, 'in progress', 'om3', 'pm3', '2020-12-20', 'bill freight to customer at actual'),
+    	('file cabinet', 5, 5, 'completed', 'om1', 'pm1', '2020-01-17', 'match color to last order'),
+    	('8 workstations', 6, 6, 'completed', 'om2', 'pm2', '2021-01-30', 'specials have longer lead time, split out, request to have all delivered together'),
+    	('stools', 7, 7, 'in progress', 'om2', 'pm2', '2021-02-04', 'schedule delivery with customer directly'),
+    	('drafting tables, stools', 8, 8, 'completed', 'om3', 'pm3', '2021-02-12', 'verify stool height compatible with tables'),
+    	('reception desk', 9, 9, 'completed', 'om1', 'pm1', '2021-02-23', 'special order wood stain "chocolate sapele" on oak for front and natural on maple for surface'),
+    	('chair', 10, 10, 'in progress', 'om1', 'pm1', '2021-03-07', 'special order "true black" finish'),
+    	('chair', 11, 11, 'in progress', 'om2', 'pm2', '2021-03-21', 'contact customer to arrange delivery'),
+    	('reconfigure cubicles', 12, 12, 'completed', 'om3', 'pm3', '2020-09-25', 'write in "20 bright white" for finished end color selection'),
+    	('work tables', 13, 13, 'in progress', 'om3', 'pm1', '2021-06-14', 'special size, see diagram in packet'),
+    	('11 workstations', 14, 14, 'completed', 'om1', 'pm2', '2021-07-25', 'chair ships direct to customer, tag for Bob'),
+    	('stool', 15, 15, 'completed', 'om2', 'pm3', '2021-07-31', 'match to customer standards before ordering');
     
 INSERT INTO Installations (project, installationLead, installationDate, installationInstructions)
 VALUES 
 	(1, 'iL1', '2020-11-11', 'use back enterance'),
 	(2, 'iL2', '2020-11-28', 'call one hour before installation'),
 	(3, 'iL3', '2020-12-20', 'install half in room 204 and half in 205'),
-	(4, 'iL4', '2020-12-30', 'use back enterance'),
+	(4, 'iL4', '2020-12-30', 'use back entrance'),
 	(5, 'iL5', '2021-02-11', 'elevator requires key card, call reception on floor 8 to have someone let you up'),
 	(6, 'iL6', '2021-02-15', 'use back enterance'),
 	(7, 'iL7', '2021-02-28', 'call one hour before installation'),
@@ -69,7 +69,7 @@ VALUES
 	(11, 'iL11', '2021-06-11', 'elevator requires key card, call reception on floor 6 to have someone let you up'),
 	(12, 'iL12', '2021-07-16', 'call one hour before installation'),
 	(13, 'iL13', '2021-07-19', 'install half in office 7 and half in office 12'),
-	(14, 'iL14', '2021-08-02', 'use back enterance'),
+	(14, 'iL14', '2021-08-02', 'use back entrance'),
 	(15, 'iL15', '2021-08-12', 'call one hour before installation');
 
 INSERT INTO Orders (project, vendor, contractNumber, vendorOrderNumber, arrivalDate)
