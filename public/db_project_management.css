@@ -13,8 +13,8 @@ button{
 
 #data{
   padding: 25px;
-  background-color: #262626;
-  text-align:center;
+  /*background-color: #262626;*/
+  text-align: left;
   color: black;
 }
 
