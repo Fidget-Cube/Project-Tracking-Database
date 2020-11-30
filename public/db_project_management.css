@@ -11,6 +11,12 @@ button{
     background-color:#ad5b0e;
 }
 
+#data{
+  padding: 25px;
+  background-color: #262626;
+  text-align:center;
+  color: black;
+}
 
 /* unvisited link */
 a:link {
