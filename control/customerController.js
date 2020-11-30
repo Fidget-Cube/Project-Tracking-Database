@@ -31,6 +31,23 @@ class CustomerController {
 
     // Creating New Customer Data
     addCustomer(customer) {
+         return new Promise((resolve, reject) => {
+            const query = 'INSERT INTO Customers (customerName, contactName, contactTitle, contactPhoneNum, salesperson, projectManager) VALUES (?, ?, ?, ?, ?, ?);';
+            dbConnection.query({
+                sql: query,
+                values: [customers.customerName, customers.contactName, customers.contactTitle, customers.contactPhoneNum, customers.salesperson, customers.projectManager]
+            }, function(err, result) {
+                if (err) reject(err);
+                resolve(result);
+            });
+        }).then(data => {
+            console.log(data);
+            return data.insertId;
+        }).catch(err => {
+            console.log(err);
+            return false;
+        })
+    }
 
     }
 
