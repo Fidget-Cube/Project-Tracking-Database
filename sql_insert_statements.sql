@@ -1,5 +1,8 @@
+/* SQL file to insert sample data into the database for demoing */
+
 USE mvonblan_cs355fl20;
 
+/* Created by Emily Ashley */
 INSERT INTO Customers (customerName, contactName, contactTitle, contactPhoneNum, salesperson, projectManager)
 VALUES
 	('Sprint Copy Center', 'any contact', 'purchasing', '707-823-3900', 'sls1', 'pm1'),
@@ -35,7 +38,8 @@ VALUES
 	(13, '3260 Santa Rosa Ave', NULL, 'Santa Rosa', 'CA', '95407'),
 	(14, '1736 Corporate Circle', NULL, 'Petaluma', 'CA', '94954'),
 	(15, '1343 Main St', NULL, 'St Helena', 'CA', '94574');
-	
+
+/* Created by Becca Solomon */	
 INSERT INTO Projects (projectName, customer, location, status, orderManager, projectDesigner, targetInstallDate, orderingInstructions)
 VALUES
 	('waiting room chairs', 1, 1, 'in progress', 'om1', 'pm1', '2020-10-20', 'request to ship with previous order'),

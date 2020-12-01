@@ -1,5 +1,7 @@
 // This is the database interface for the table "Projects" //
 // Controls querying, insertion, editing and deletion      //
+// Created by Max vonBlankenburg                           //
+
 const dbConnection = require('../database/connection');
 
 class ProjectController {
@@ -77,7 +79,7 @@ class ProjectController {
 
     // Deleting Project Data
     deleteProjectByID(pID) {
-        
+
     }
 }
 

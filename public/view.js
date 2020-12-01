@@ -1,4 +1,5 @@
-// Controls form submissions on the view page
+// Controls form submissions on the view page //
+// Created by Max vonBlankenburg              //
 
 // Project view form
 function viewProject() {

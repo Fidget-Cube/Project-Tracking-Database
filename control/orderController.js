@@ -1,5 +1,7 @@
 // This is the database interface for the table "Orders"  //
 // Controls querying, insertion, editing and deletion     //
+// Created by Max vonBlankenburg                          //
+
 const dbConnection = require('../database/connection');
 
 class OrderController {
@@ -41,7 +43,7 @@ class OrderController {
 
     // Deleting Order Data
     deleteOrderByProject(pID) {
-        
+
     }
 }
 

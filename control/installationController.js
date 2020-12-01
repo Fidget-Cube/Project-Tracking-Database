@@ -1,5 +1,7 @@
 // This is the database interface for the table "Installations" //
 // Controls querying, insertion, editing and deletion           //
+// Created by Max vonBlankenburg                                //
+
 const dbConnection = require('../database/connection');
 
 class InstallationController {
@@ -41,7 +43,7 @@ class InstallationController {
 
     // Deleting Installation Data
     deleteInstallationByProject(pID) {
-        
+
     }
 }
 

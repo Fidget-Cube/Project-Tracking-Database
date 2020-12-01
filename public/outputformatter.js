@@ -1,10 +1,11 @@
-// Formats webpage text output for queried data
+// Formats webpage text output for queried data //
+// Created by Max vonBlankenburg                //
 
 function outputFormatter(data) {
     let output = "";
     for (object of data) {
         for (attribute in object) {
-            switch(attribute) {
+            switch (attribute) {
                 case "customerID":
                     output += "Customer ID: " + object[attribute] + "<br>";
                     break;

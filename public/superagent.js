@@ -1,4 +1,5 @@
-// Handles POST requests and responses to and from the server
+// Handles POST requests and responses to and from the server //
+// Created by Max vonBlankenburg                              //
 
 // Uses AJAX to communicate with the server
 function callDoc(url, req) {

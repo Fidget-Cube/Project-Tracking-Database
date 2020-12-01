@@ -1,5 +1,7 @@
 // This is the routing program for the Project Tracking Database //
 // It controls web user requests and responses using Express.js  //
+// Created By Max vonBlankenburg                                 //
+
 const express = require('express');
 const customerController = new(require('./control/customerController.js'))();
 const locationController = new(require('./control/locationController.js'))();
@@ -10,7 +12,7 @@ const orderController = new(require('./control/orderController.js'))();
 const app = express();
 const port = 8080;
 app.use(express.json());
-app.use(express.urlencoded({ extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 // Redirects to the homepage
 app.get('/', (req, res) => {

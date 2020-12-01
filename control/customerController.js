@@ -1,5 +1,6 @@
 // This is the database interface for the table "Customers" //
 // Controls querying, insertion, editing and deletion       //
+
 const dbConnection = require('../database/connection');
 
 class CustomerController {
@@ -8,6 +9,7 @@ class CustomerController {
     }
 
     // Obtaining Customer Data
+    // Created by Max vonBlankenburg
     getCustomerByName(cName) {
         return new Promise((resolve, reject) => {
             const query = 'SELECT * FROM Customers WHERE customerName=?';
@@ -30,6 +32,7 @@ class CustomerController {
     }
 
     // Creating New Customer Data
+    // Created by Becca Solomon
     addCustomer(customer) {
         return new Promise((resolve, reject) => {
             const query = 'INSERT INTO Customers (customerName, contactName, contactTitle, contactPhoneNum, salesperson, projectManager) VALUES (?, ?, ?, ?, ?, ?);';
@@ -56,7 +59,7 @@ class CustomerController {
 
     // Deleting Customer Data
     deleteCustomerByID(cID) {
-        
+
     }
 }
 

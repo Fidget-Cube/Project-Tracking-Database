@@ -1,4 +1,6 @@
 // This is the Database connection program //
+// Created by Max vonBlankenburg           //
+
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({

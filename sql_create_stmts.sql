@@ -1,3 +1,6 @@
+/* SQL file to initialize tables in the database */
+/* Created by Emily Ashley                       */
+
 /*DROP DATABASE projectTracker;
 CREATE DATABASE projectTracker;
 Cannot create new databases in blue :(*/

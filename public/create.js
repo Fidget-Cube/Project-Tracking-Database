@@ -1,4 +1,5 @@
-// Controls form submissions on the create page.
+// Controls form submissions on the create page. //
+// Created by Max vonBlankenburg                 //
 
 // Project creation form
 function addProject() {

@@ -1,5 +1,7 @@
 // This is the database interface for the table "Locations" //
 // Controls querying, insertion, editing and deletion       //
+// Created by Max vonBlankenburg                            //
+
 const dbConnection = require('../database/connection');
 
 class LocationController {
@@ -41,7 +43,7 @@ class LocationController {
 
     // Deleting Location Data
     deleteLocationByCustomer(cID) {
-        
+
     }
 }
 
