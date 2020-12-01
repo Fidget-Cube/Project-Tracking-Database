@@ -1,3 +1,6 @@
+// Handles POST requests and responses to and from the server
+
+// Uses AJAX to communicate with the server
 function callDoc(url, req) {
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -10,6 +13,7 @@ function callDoc(url, req) {
     xhttp.send(req);
 }
 
+// Writes response text to the page
 function outputController(xhttp) {
     let response = JSON.parse(xhttp.responseText);
     if (response.error) {

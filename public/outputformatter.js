@@ -1,3 +1,5 @@
+// Formats webpage text output for queried data
+
 function outputFormatter(data) {
     let output = "";
     for (object of data) {

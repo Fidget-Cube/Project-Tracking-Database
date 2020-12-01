@@ -1,3 +1,6 @@
+// Controls form submissions on the create page.
+
+// Project creation form
 function addProject() {
     const request = JSON.stringify({
         projectName: document.getElementById("projectName").value,
